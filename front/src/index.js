@@ -2,15 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './styles/index.css';
 import App from './components/App';
-import AuthProvider from './context/AuthProvider';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/**/}<AuthProvider.Consumer>
-      {() => <App />}
-    </AuthProvider.Consumer>{/**/}
+    {/* LM: Removing the provider from here, moving it to App component */}
+    {/* <AuthProvider.Consumer> */}
+      <App/>
+    {/* </AuthProvider.Consumer> */}
   </React.StrictMode>
 );
 

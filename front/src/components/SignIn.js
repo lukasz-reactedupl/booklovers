@@ -1,42 +1,56 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import PropTypes from 'prop-types';
 import logo from '../logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate, Link  } from "react-router-dom";
 import {submitItem, showNote} from '../functions';
-import useAuth from "../hooks/useAuth";
+import AuthContext from '../context/AuthProvider';
 
 export default function SignIn({setData}) {
-  const { setAuth } = useAuth(); //gives undefined for setAuth because returns empty object
-  const [username, setUserName] = useState();
-  const [password, setPassword] = useState();
+  //LM: Removed line below, we don't need that anymore
+  //const { setAuth } = useAuth(); //gives undefined for setAuth because returns empty object
   const navigate = useNavigate();
   
-  const handleSubmit = async e => {
+  //LM: Commented out line below, this now comes from the context
+  const [username, setUsername] = useState();
+  const [password, setPassword] = useState();
+  //LM: Reaching out to the context
+  const {usrName, setUsrName} = useContext(AuthContext);
+  
+  //LM: temporarily removed handleSubmit to make room for a simple check if we can save data in context
+  // const handleSubmit = async e => {
+  //   e.preventDefault();
+  //   //console.log(username);
+  //   //console.log(password);
+  //   const response = await submitItem({
+  //     username,
+  //     password
+  //   }, 'signin');
+  //   //console.log(response);
+  //   //console.log({...response, plainTextPassword: password});
+  //   //console.log(password);
+  //   if(response.status=="valid-user") {
+  //     //setAuth({ ...response, plainTextPassword: password, roles: ["valid-user"] });
+  //     setData((prev) => ({...prev, ...response, plainTextPassword: password}));
+  //     navigate("/myprofile");
+  //   } else if(response.status==="invalid-password") {
+  //     showNote(document.getElementById("password-div"), "bottom-out", "Invalid password");
+  //     return;
+  //   }
+  //   else {
+  //     showNote(document.getElementById("signin-login"), "bottom-out", "No such user");
+  //     return;
+  //     //navigate("/signin");
+  //   }}
+
+  //LM: added handler
+  const handleSignIn = (e, userName, password) => {
     e.preventDefault();
-    //console.log(username);
-    //console.log(password);
-    const response = await submitItem({
-      username,
-      password
-    }, 'signin');
-    //console.log(response);
-    //console.log({...response, plainTextPassword: password});
-    //console.log(password);
-    if(response.status=="valid-user") {
-      //setAuth({ ...response, plainTextPassword: password, roles: ["valid-user"] });
-      setData((prev) => ({...prev, ...response, plainTextPassword: password}));
-      navigate("/myprofile");
-    } else if(response.status==="invalid-password") {
-      showNote(document.getElementById("password-div"), "bottom-out", "Invalid password");
-      return;
-    }
-    else {
-      showNote(document.getElementById("signin-login"), "bottom-out", "No such user");
-      return;
-      //navigate("/signin");
-    }}
+    setUsrName(userName); //LM: This is where we set the value in the state
+  }
+
+
   return(
     <div>
         <div className='page-container'>
@@ -45,8 +59,8 @@ export default function SignIn({setData}) {
             <img className="logo-img" src={logo} alt="logo" />
             <h1 className='logo-h1'>BookLovers</h1>
           </div>
-          <form id="form-signin" onSubmit={handleSubmit} >
-            <input onChange={e => setUserName(e.target.value)} className='big-input' id="signin-login" type="text" placeholder='Enter login' required/>
+          <form id="form-signin" onSubmit={() => console.log('Tmp replacement of hande submit')} >
+            <input onChange={e => setUsername(e.target.value)} className='big-input' id="signin-login" type="text" placeholder='Enter login' required/>
             <div id="password-div" className='big-input'>
               <input 
                     onFocus={e => {
@@ -70,7 +84,9 @@ export default function SignIn({setData}) {
                   
                 className="eye-icon" icon={faEyeSlash} />
             </div>
-            <input type="submit" id="signin-button" className="button" value="Sign in" />
+            {/* <input type="submit" id="signin-button" className="button" value="Sign in" /> */}
+            {/* LM: replaved input with a button to be able to directly define handler */}
+            <button onClick={(e) => handleSignIn(e, username, password)}>Sign in</button>
             <Link to="/register" id="register-link">No account yet? Register!</Link>
           </form>
           </div>
