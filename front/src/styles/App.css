@@ -1,0 +1,137 @@
+::-moz-selection {
+  background: rgb(158, 151, 149);
+}
+
+::selection {
+  background: rgb(158, 151, 149);
+}
+
+.button {
+  display: block;
+  background-color: #613A43;
+    border: none;
+    outline: none;
+    color: #eee8e4;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 5px 15px;
+    border-radius: 7px;
+}
+
+.button:hover {
+  background-color: #88676e;
+  cursor: pointer;
+}
+
+.form-container {
+  border: 2px solid #613A43;
+  border-radius: 10px;
+  margin: 15px;
+  padding: 10px;
+  box-shadow: 0px 0px 5px #613A43;
+  background-color: #eee8e4;
+  color: #32485C;
+}
+
+.logo-img {
+  width: 6rem;
+  padding: 5px;
+}
+
+.logo-container > * {
+  display: inline-block;
+  color: #613A43;
+}
+
+.logo-h1 {
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+.page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.big-input {
+  border-radius: 15px;
+  display: block;
+  padding: 5px;
+  margin: 5px;
+  width: 40%;
+  font-size: 1.2rem;
+  border: 1px solid #613A43;
+  box-shadow: 0px 0px 5px #613A43;
+  background-color: #eee8e4;
+}
+
+input:not(.button, .password-input):focus, textarea:not(.button):focus {
+  outline: none;
+  border: 2px solid #613A43;
+}
+
+.password-input {
+  width: 90%;
+  background-color: transparent;
+  font-size: 1.2rem;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  padding: 0;
+  margin-bottom: -2px;
+  float: left;
+}
+
+.password-input:focus {
+  outline: none;
+}
+
+.eye-icon {
+  color:#613A43;
+}
+
+.eye-icon:hover {
+  color:#88676e;
+  cursor: pointer;
+}
+
+textarea {
+  resize: none;
+}
+
+.note {
+  position: absolute;
+  z-index: 1000;
+  padding: 5px;
+  border: 1px solid #8b0000;
+  border-radius: 6px;
+  background: white;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+Link, a {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 1100px){
+  .logo-h1 {
+    font-size: 1.6rem;
+  }
+  .logo-img {
+    width: 5rem;
+  }
+}
+
+@media screen and (max-width: 800px){
+  .logo-h1 {
+    font-size: 1rem;
+    margin-top: 2px;
+  }
+  .logo-img {
+    width: 2.5rem;
+  }
+}

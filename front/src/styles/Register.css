@@ -1,0 +1,93 @@
+#register-link {
+    color: #613A43;
+    display: block;
+    margin-top: 0.6rem;
+  }
+  
+  #register-link:hover {
+    color: #88676e;
+    cursor: pointer;
+  }
+  
+  #register-form {
+    width: 40%;
+    margin: 0 auto;
+  }
+
+  #register-logo {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  #register-logo > img {
+    float: none;
+    margin-bottom: -10px;
+  }
+
+  #register-button {
+    width: 6rem;
+    margin: 0 auto;
+    border: none;
+  }
+
+  #select:focus() {
+    border: 2px solid #613A43;
+    outline: none;
+  }
+
+  .eye-icon-grey {
+    color:#073215;
+  }
+  
+  .eye-icon-grey:hover {
+    color: #32485C;
+    cursor: pointer;
+  }
+
+  #password-input {
+    width: 94%;
+    font-size: 0.8rem;
+    margin: 4px 3px;
+  }
+
+  #register-buttons {
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    width: 90%;
+  }
+
+  .cancel-button {
+    float: right;
+  }
+
+  #select-container {
+    width: 125px;
+  }
+
+  @media screen and (max-width: 1000px) and (min-width: 550px){
+    #register-form {
+      width: 60%;
+    }
+    #password-input {
+      width: 90%;
+    }
+  }
+
+  @media screen and (max-width: 1300px) and (min-width: 1000px){
+    #register-form {
+      width: 50%;
+    }
+    #password-input {
+      width: 94%;
+    }
+  }
+
+  @media screen and (max-width: 550px) {
+    #register-form {
+      width: 90%;
+    }
+    #password-input {
+      width: 90%;
+    }
+  }

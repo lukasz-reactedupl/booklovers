@@ -1,0 +1,240 @@
+#ProfilePage {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    font-family: Baskerville;
+  }
+
+.Profile, .Board {
+    border: 2px solid #613A43;
+    border-radius: 10px;
+    margin: 15px;
+    background-color: #e6cebf;
+    padding: 10px;
+    box-shadow: 0px 0px 5px #613A43;
+  }
+  
+  .Profile-avatar, #register-icon {
+    width: 7rem;
+    height: 7rem;
+    padding: 0;
+    border-radius: 50%;
+    margin-right: 10px;
+    box-shadow: 0px 0px 5px #613A43;
+  }
+  
+  .Profile-user {
+    display: inline-block;
+  }
+  
+  .Profile-name, .Profile-surname, .Profile-p-genres {
+    font-size: 1.4rem;
+    margin: 5px;
+    color: #613A43;
+    font-weight: bold;
+    text-shadow: #ead8cc 1px 0 5px;
+  }
+  
+  .Profile-rang {
+    color: #323339;
+    text-shadow: #DFE2D2 1px 0 5px;
+  }
+  
+  .Profile-p-genres {
+    font-size: 1.1rem;
+  }
+  
+  .Profile-genre {
+    border: 1px solid #613A43;
+    border-radius: 4px;
+    margin: 2px 5px;
+    padding: 1px 5px;
+    box-shadow: 1px 1px 3px #613A43;
+    background-color: #eee8e4;
+    display: inline-block;
+    color: #32485C;
+  }
+  
+  .Board-header {
+    text-shadow: #ead8cc 1px 0 5px;
+    color: #613A43;
+    margin: 0;
+  }
+
+  #edit-profile{
+    margin-top: 10px;
+    margin-left: auto;
+    font-weight: 500;
+  }
+  
+  .new-item-form > input:not(.form-submit), .new-item-form > textarea, #new-book-form > fieldset > input:not(#add-book), #div-password {
+    display: block;
+    margin-bottom: 10px;
+    width: 98%;
+    border: 1px solid #073215;
+    border-radius: 5px;
+    padding: 3px;
+  }
+
+  #div-password {
+    padding: 0;
+    background-color: white;
+    font-size: 1rem;
+    width: 99%;
+  }
+
+  .new-item-form > input:not(.form-submit):focus, #new-book-form > fieldset > input:not(#add-book):focus {
+    border: 2px solid #613A43;
+  }
+  
+  .form-header {
+    margin: 0;
+    text-align: center;
+    color: #32485C;
+  }
+  
+  .form-label {
+    display: block;
+    font-size: 1.2rem;
+    margin: 5px auto;
+    color: #32485C;
+  }
+  
+  .form-submit {
+    width: 10rem;
+    margin: 0 auto;
+  }
+  
+  .form-genres > div > label {
+    display: block;
+    color: #073215;
+  }
+  
+  .form-genres {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .form-expander, .Board-expander {
+    background-color: transparent;
+    border: none;
+    float: right;
+    font-weight: bold;
+  }
+
+  .form-expander {
+    color: #073215;
+  }
+
+  .Board-expander {
+    color: #613A43;
+    font-size: 1.3rem;
+  }
+   
+  
+  .form-expander:hover, .Board-expander:hover {
+    cursor: pointer;
+  }
+
+  .Board-expander:hover {
+    color: #88676e;
+  }
+  
+  #new-book-form > fieldset {
+    border-radius: 7px;
+    border-color:#e6cebf;
+    margin-bottom: 10px;
+  }
+  
+  #new-book-form > fieldset > legend {
+    font-size: 1.2rem;
+    margin: 15px 0 5px;
+    color: #32485C;
+  }
+  
+  #add-book {
+    background-color: #32485C;
+    color: #b5beb8;
+    font-weight: bold;
+    width: 8rem;
+    margin-top: 10px;
+    border:none;
+    border-radius: 5px;
+    padding: 3px;
+  }
+  
+  #add-book:hover {
+    background-color: #556574;
+    color: #e1e9e4;
+    cursor: pointer;
+  }
+
+.Profile-text {
+    color: #32485C;
+    padding-left: 7px;
+    margin-top: 0;
+  }
+
+  .books {
+    width: 80%;
+    margin: 10px;
+  }
+
+.flex-center {
+    display: flex; 
+    align-items: center;
+  }
+
+  .save-changes {
+    width: 8rem; 
+    float: left;
+    margin: 0;
+    padding-left: 10px;
+  }
+
+  .save-submit {
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    width: 90%;
+  }
+
+  @media screen and (max-width: 1100px){
+    #ProfilePage {
+      grid-template-columns: 1fr 1fr;
+      grid-auto-flow: column;
+      grid-template-rows: auto auto auto;
+    }
+    #left-column { 
+      grid-column: 1;
+      grid-row: 1;
+    }
+  
+    #middle-column { 
+      grid-column: 2;
+      grid-row: 1/ span 3;
+    }
+    #right-column { 
+      grid-column: 1;
+      grid-row: 2;
+    }
+  }
+
+  @media screen and (max-width: 700px){
+    #ProfilePage {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto auto;
+    }
+    #left-column { 
+      grid-column: 1;
+      grid-row: 1;
+    }
+  
+    #middle-column { 
+      grid-column: 1;
+      grid-row: 3;
+    }
+    #right-column { 
+      grid-column: 1;
+      grid-row: 2;
+    }
+  }

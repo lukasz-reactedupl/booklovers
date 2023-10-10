@@ -1,0 +1,58 @@
+.item {
+    border: 1px solid #613A43;
+    border-radius: 7px;
+    margin: 5px;
+    padding: 5px;
+    width: 90%;
+    box-shadow: 0px 0px 3px #613A43;
+    background-color: #eee8e4;
+    display: flex;
+    color: #32485C;
+}
+
+.item-header {
+    margin: 0;
+}
+
+.item-authors {
+    margin: 3px;
+}
+
+.edit-item-button,
+.remove-book {
+    color: #613A43;
+    font-size: 1.3rem;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.edit-item-button:hover,
+.remove-book:hover {
+    color: #88676e;
+    cursor: pointer;
+}
+
+.item-body {
+    width: 90%;
+}
+
+.gold-star {
+    color: #FFC000;
+}
+
+.gray-star {
+    color: gray;
+}
+
+.quote-body {
+    display: flex; 
+    align-items: center;
+}
+
+.top-review-body {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: space-between;
+}
